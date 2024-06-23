@@ -1,6 +1,6 @@
 # SyncSketch
 
-SyncSketch is a real-time collaborative whiteboard application where friends can brainstorm ideas, sketch designs, and annotate presentations together. It combines drawing, typing, and real-time communication in one intuitive platform.
+SyncSketch is a real-time collaborative whiteboard application where friends can brainstorm ideas, sketch designs, and annotate presentations together. It combines typing, and real-time communication in one intuitive platform.
 
 ## Key Features
 

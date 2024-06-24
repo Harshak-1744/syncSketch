@@ -8,7 +8,7 @@ const app = express();
 const server = http.createServer(app);
 const io = socketIo(server);
 
-app.use(helmet()); 
+app.use(helmet()); // Adds security headers to the response
 app.use(express.static(path.join(__dirname, 'public')));
 
 io.on('connection', (socket) => {

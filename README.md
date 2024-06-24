@@ -6,8 +6,10 @@ SyncSketch is a real-time collaborative whiteboard application where friends can
 
 - **Real-time Collaboration:** Work together effortlessly with friends on the same canvas, seeing each stroke and edit as it happens.
 - **Text Typing:** Seamlessly switch between drawing and typing modes, allowing for text input, editing, and formatting directly on the canvas.
+- **Reset Canvas:** Quickly clear the entire canvas with a single button click to start fresh.
 - **WebSocket Technology:** Ensures instant updates and synchronization across all connected users, making collaboration truly real-time.
 - **User-friendly Interface:** Designed for easy navigation, tool selection, and real-time feedback on collaborative activities.
+- **Drawing Tools:** Draw using a pen or switch to an eraser with customizable sizes for more precise editing.
 
 ## Technologies Used
 
@@ -34,7 +36,6 @@ SyncSketch is a real-time collaborative whiteboard application where friends can
 
 - **GitHub:** Version control and repository hosting.
 - **GitHub Pages:** Hosting the frontend application.
-- **Heroku (Optional):** Deployment platform for backend services.
 
 ### Additional Tools and Libraries
 

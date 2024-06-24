@@ -57,6 +57,11 @@ button {
     color: #155724;
 }
 
+#eraserSize {
+    margin-left: 10px;
+    vertical-align: middle;
+}
+
 
 
 @media (min-width: 768px) {

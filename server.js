@@ -8,14 +8,20 @@ const app = express();
 const server = http.createServer(app);
 const io = socketIo(server);
 
-app.use(helmet()); // Adds security headers to the response
+app.use(helmet()); 
 app.use(express.static(path.join(__dirname, 'public')));
 
 io.on('connection', (socket) => {
     console.log('New client connected');
+    
     socket.on('drawing', (data) => {
         socket.broadcast.emit('drawing', data);
     });
+    
+    socket.on('reset', () => {
+        socket.broadcast.emit('reset');
+    });
+
     socket.on('disconnect', () => {
         console.log('Client disconnected');
     });

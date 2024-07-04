@@ -4,7 +4,31 @@ canvas.height = 400;
 
 const ctx = canvas.getContext('2d');
 ctx.fillStyle = "white";
-ctx.fillRect(0,0, canvas.width, canvas.height);
+ctx.fillRect(0, 0, canvas.width, canvas.height);
 
-    
-    
+var draw_color = "black";
+var draw_width = 2;  
+var is_drawing = false;
+
+canvas.addEventListener("touchstart", start, false);
+canvas.addEventListener("touchmove", draw, false);
+canvas.addEventListener("mousedown", start, false);
+canvas.addEventListener("mousemove", draw, false);
+
+function start(event) {
+    is_drawing = true;
+    ctx.beginPath();
+    ctx.moveTo(event.clientX - canvas.offsetLeft, event.clientY - canvas.offsetTop);
+    event.preventDefault();
+}
+
+function draw(event) {
+    if (is_drawing) {
+        ctx.lineTo(event.clientX - canvas.offsetLeft, event.clientY - canvas.offsetTop);
+        ctx.strokeStyle = draw_color;  
+        ctx.lineWidth = draw_width;
+        ctx.lineCap = "round";
+        ctx.lineJoin = "round";
+        ctx.stroke();  
+    }
+}

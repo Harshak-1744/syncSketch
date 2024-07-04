@@ -12,8 +12,12 @@ var is_drawing = false;
 
 canvas.addEventListener("touchstart", start, false);
 canvas.addEventListener("touchmove", draw, false);
+canvas.addEventListener("touchend", stop, false);  
+
 canvas.addEventListener("mousedown", start, false);
 canvas.addEventListener("mousemove", draw, false);
+canvas.addEventListener("mouseup", stop, false);  
+canvas.addEventListener("mouseout", stop, false);  
 
 function start(event) {
     is_drawing = true;
@@ -31,4 +35,14 @@ function draw(event) {
         ctx.lineJoin = "round";
         ctx.stroke();  
     }
+    event.preventDefault();  
+}
+
+function stop(event) {
+    if (is_drawing) {
+        ctx.stroke();
+        ctx.closePath();
+        is_drawing = false;
+    }
+    event.preventDefault();
 }

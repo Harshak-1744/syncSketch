@@ -15,14 +15,13 @@
                 <button class="button" type="button">Undo</button>
                 <button class="button" type="button">Clear</button>
 
-                <div class="color-field" style="background: aqua"></div>
-                <div class="color-field" style="background: black"></div>
-                <div class="color-field" style="background: red"></div>
-                <div class="color-field" style="background: green"></div>
+                <div onclick="change_color(this)" class="color-field" style="background: rgb(255, 94, 0)"></div>
+                <div onclick="change_color(this)" class="color-field" style="background: blue"></div>
+                <div onclick="change_color(this)" class="color-field" style="background: red"></div>
+                <div onclick="change_color(this)" class="color-field" style="background: green"></div>
 
-
-                <input class="color-picker" type="color">
-                <input type="range" min="1" max="100" class="pen-range">
+                <input onInput = "draw_color = this.value" class="color-picker" type="color">
+                <input onInput = "draw_width = this.value" type="range" min="1" max="100" class="pen-range">
             </div>
     </div>
     <script src="script.js"></script>

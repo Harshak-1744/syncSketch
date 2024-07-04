@@ -39,7 +39,7 @@ SyncSketch is a real-time collaborative whiteboard application where friends can
 
 ### Additional Tools and Libraries
 
-- **Bootstrap:** Responsive design and UI components.
+- **Tailwind:** Responsive design and UI components.
 - **Font Awesome:** Icons and visual elements.
 
 ### Development Environment

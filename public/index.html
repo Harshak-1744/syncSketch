@@ -9,10 +9,10 @@
 </head>
 <body>
     <h1 style="color: white;">Sync_Sketch</h1>
-    <div class="field">
+     <div class="field">
         <canvas id="canvas"></canvas>
             <div class="tools">
-                <button class="button" type="button">Undo</button>
+                <button onclick="undo_last()" class="button" type="button">Undo</button>
                 <button onclick="clear_canvas()" class="button" type="button">Clear</button>
 
                 <div onclick="change_color(this)" class="color-field" style="background: rgb(255, 94, 0)"></div>
@@ -23,7 +23,6 @@
                 <input onInput = "draw_color = this.value" class="color-picker" type="color">
                 <input onInput = "draw_width = this.value" type="range" min="1" max="100" class="pen-range">
             </div>
-    </div>
-    <script src="script.js"></script>
+    </div>ript.js"></script>
 </body>
 </html>

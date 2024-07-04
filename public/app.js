@@ -7,7 +7,7 @@ ctx.fillStyle = "white";
 ctx.fillRect(0, 0, canvas.width, canvas.height);
 
 var draw_color = "black";
-var draw_width = 2;  
+var draw_width = "2";  
 var is_drawing = false;
 
 canvas.addEventListener("touchstart", start, false);
@@ -18,6 +18,12 @@ canvas.addEventListener("mousedown", start, false);
 canvas.addEventListener("mousemove", draw, false);
 canvas.addEventListener("mouseup", stop, false);  
 canvas.addEventListener("mouseout", stop, false);  
+
+
+function change_color(element){
+    draw_color = element.style.background;
+}
+
 
 function start(event) {
     is_drawing = true;

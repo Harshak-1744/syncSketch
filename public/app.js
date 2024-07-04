@@ -11,6 +11,11 @@ var draw_color = "black";
 var draw_width = 2;  
 var is_drawing = false;
 
+
+var restore_array = [];
+var index = -1;
+
+
 canvas.addEventListener("touchstart", start, false);
 canvas.addEventListener("touchmove", draw, false);
 canvas.addEventListener("touchend", stop, false);  
@@ -52,6 +57,11 @@ function stop(event) {
         is_drawing = false;
     }
     event.preventDefault();
+
+    if (event.type != 'mouseour'){
+        restore_array.push(ctx.getImageData(0,0, canvas.width, canvas.height));
+        index +=1;
+    }
 }
 
 
@@ -59,4 +69,21 @@ function clear_canvas(){
     ctx.fillStyle = start_background_color;
     ctx.clearRect(0,0, canvas.width, canvas.height);
     ctx.fillRect(0, 0 , canvas.width, canvas.height);
+
+
+    restore_array = [];
+    index = -1;
 }
+
+
+function undo_last() {
+    if (index < 0) {
+        clear_canvas();  
+    } else {
+        index -= 1;
+        ctx.putImageData(restore_array[index], 0, 0);  
+        restore_array.pop();  
+    }
+}
+
+

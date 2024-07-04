@@ -3,11 +3,12 @@ canvas.width = window.innerWidth - 60;
 canvas.height = 400;
 
 const ctx = canvas.getContext('2d');
-ctx.fillStyle = "white";
+var start_background_color = "white";
+ctx.fillStyle = start_background_color;
 ctx.fillRect(0, 0, canvas.width, canvas.height);
 
 var draw_color = "black";
-var draw_width = "2";  
+var draw_width = 2;  
 var is_drawing = false;
 
 canvas.addEventListener("touchstart", start, false);
@@ -51,4 +52,11 @@ function stop(event) {
         is_drawing = false;
     }
     event.preventDefault();
+}
+
+
+function clear_canvas(){
+    ctx.fillStyle = start_background_color;
+    ctx.clearRect(0,0, canvas.width, canvas.height);
+    ctx.fillRect(0, 0 , canvas.width, canvas.height);
 }

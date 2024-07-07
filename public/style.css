@@ -39,7 +39,7 @@ canvas {
   min-height: 40px;
   min-width: 40px;
   cursor: pointer;
-  border-sizing: border-box;
+  box-sizing: border-box;
   display: inline-block;
   border: 2px solid white;
   align-self: center;

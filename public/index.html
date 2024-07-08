@@ -6,24 +6,23 @@
     <link href="style.css" rel="stylesheet">
     <link rel="icon" type="image/x-icon" href="./favicon.ico">
     <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <script src="/socket.io/socket.io.js"></script>
     <title>Sync_Sketch</title>
 </head>
 <body>
     <h1 style="color: white;">Sync_Sketch</h1>
     <div class="field">
         <canvas id="canvas"></canvas>
-            <div class="tools">
-                <button onclick="undo_last()" class="button" type="button">Undo</button>
-                <button onclick="clear_canvas()" class="button" type="button">Clear</button>
-
-                <div onclick="change_color(this)" class="color-field" style="background: rgb(255, 94, 0)"></div>
-                <div onclick="change_color(this)" class="color-field" style="background: blue"></div>
-                <div onclick="change_color(this)" class="color-field" style="background: red"></div>
-                <div onclick="change_color(this)" class="color-field" style="background: green"></div>
-
-                <input onInput = "draw_color = this.value" class="color-picker" type="color">
-                <input onInput = "draw_width = this.value" type="range" min="1" max="100" class="pen-range">
-            </div>
+        <div class="tools">
+            <button onclick="undo_last()" class="button" type="button">Undo</button>
+            <button onclick="clear_canvas()" class="button" type="button">Clear</button>
+            <div onclick="change_color(this)" class="color-field" style="background: rgb(255, 94, 0)"></div>
+            <div onclick="change_color(this)" class="color-field" style="background: blue"></div>
+            <div onclick="change_color(this)" class="color-field" style="background: red"></div>
+            <div onclick="change_color(this)" class="color-field" style="background: green"></div>
+            <input onInput="draw_color = this.value" class="color-picker" type="color">
+            <input onInput="draw_width = this.value" type="range" min="1" max="100" class="pen-range">
+        </div>
     </div>
     <script src="app.js"></script>
 </body>

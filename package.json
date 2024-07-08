@@ -1,10 +1,11 @@
 {
   "name": "syncsketch",
   "version": "1.0.0",
-  "description": "",
+  "description": "SyncSketch is a real-time collaborative whiteboard application where friends can brainstorm ideas, sketch designs, and annotate presentations together. It combines typing, and real-time communication in one intuitive platform.",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
   },
   "keywords": [],
   "author": "",
@@ -13,5 +14,6 @@
     "express": "^4.19.2",
     "helmet": "^7.1.0",
     "socket.io": "^4.7.5"
-  }
+  },
+  "devDependencies": {}
 }

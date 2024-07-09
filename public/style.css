@@ -7,6 +7,10 @@
     --border-color: white;
     --button-background: #222;
     --shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    --spacing: 15px;
+    --button-height: 40px;
+    --button-width: 100px;
+    --margin: 10px;
 }
 
 * {
@@ -17,7 +21,7 @@
 
 body {
     margin: 0;
-    padding: 20px;
+    padding: var(--spacing);
     background: var(--background-color);
     font-family: var(--font);
     overflow: hidden;
@@ -26,7 +30,7 @@ body {
 
 h1 {
     text-align: center;
-    margin-bottom: 20px;
+    margin-bottom: var(--spacing);
 }
 
 canvas {
@@ -42,25 +46,25 @@ canvas {
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
-    margin-top: 15px;
+    margin-top: var(--spacing);
 }
 
 .tools .color-field, .tools .button {
-    min-height: 40px;
-    min-width: 40px;
-    height: 40px;
-    width: 40px;
+    min-height: var(--button-height);
+    min-width: var(--button-height);
+    height: var(--button-height);
+    width: var(--button-height);
     cursor: pointer;
     box-sizing: border-box;
     display: inline-block;
     border: 2px solid var(--border-color);
     align-self: center;
-    margin: 10px;
+    margin: var(--margin);
 }
 
 .tools .button {
     width: auto;
-    padding: 0 15px;
+    padding: 0 var(--margin);
     background: var(--button-background);
     color: var(--text-color);
     font-weight: bold;
@@ -68,31 +72,27 @@ canvas {
 
 .color-picker, .pen-range {
     align-self: center;
-    margin: 10px;
-    height: 40px;
+    margin: var(--margin);
+    height: var(--button-height);
 }
 
 @media (min-width: 600px) {
     .tools .color-field, .tools .button, .color-picker, .pen-range {
-        margin: 15px;
+        margin: var(--spacing);
     }
 }
 
 @media (min-width: 900px) {
     .tools .button {
-        width: 100px;
-        height: 40px;
+        width: var(--button-width);
     }
-    .color-picker {
-        height: 50px;
-    }
-    .pen-range {
-        height: 50px;
+    .color-picker, .pen-range {
+        height: calc(var(--button-height) + 10px);
     }
 }
 
 @media (min-width: 1200px) {
     body {
-        padding: 30px;
+        padding: calc(var(--spacing) + 15px);
     }
 }
